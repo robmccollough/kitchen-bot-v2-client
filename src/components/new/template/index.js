@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-
+import React, { useState, useEffect } from "react";
+import { Container } from "semantiuc-ui-react";
+import axios from "axios";
 
 /*
  To use this component inside another example:
@@ -15,16 +15,14 @@ const SomeOtherComponent = (props) => {
 }
 
 */
-const TemplateComponent = (props) => {
-    //hook declarations go here
+const TemplateComponent = props => {
+	//hook declarations go here
 
-    return <div>
-        <h1>Im a react component! Here is a message: {props.message}</h1>
-    </div>
-}
-
-
+	return (
+		<div>
+			<h1>Im a react component! Here is a message: {props.message}</h1>
+		</div>
+	);
+};
 
 export default TemplateComponent;
-
-
