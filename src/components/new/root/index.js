@@ -12,6 +12,7 @@ import Login from "../login";
 import Register from "../register";
 import HomeAdmin from "../homeAdmin";
 import Home from "../home";
+import history from "../history";
 
 //Goal: Start at always being at login page, check for cookies->
 // if cookie found, use credentials to log in and redirect to home
@@ -19,14 +20,14 @@ import Home from "../home";
 
 const Root = props => {
 	return (
-		<Router>
+		<Router history={history}>
 			<Switch>
 				<Route path="/home" component={Home} />
 				<Route path="/home/admin" component={HomeAdmin} />
-				<Route path="/login" component={Login} />
+				<Route path="/login/" component={Login} />
 				<Route path="/register" component={Register} />
 			</Switch>
-			<Redirect exact from="/" to="login" />
+			<Redirect exact from="/" to="/login" />
 		</Router>
 	);
 };

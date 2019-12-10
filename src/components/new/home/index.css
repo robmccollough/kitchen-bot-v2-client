@@ -1,1 +1,15 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+.home-page {
+  height: 100%;
+  width: 100%;
+}
+
+.home-header {
+  height: 20%;
+  width: 100%;
+}
+
+.home-grid {
+  width: 100%;
+  height: 80%;
+}
+/*# sourceMappingURL=index.css.map */
