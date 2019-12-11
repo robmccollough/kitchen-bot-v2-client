@@ -2,10 +2,10 @@ import React from "react";
 import "./index.css";
 import { Header } from "semantic-ui-react";
 import {
-	BrowserRouter as Router,
-	Route,
-	Redirect,
-	Switch
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
 } from "react-router-dom";
 import { Provider, connect, withRouter } from "react-redux";
 import Login from "../login";
@@ -19,17 +19,17 @@ import history from "../history";
 //if no cookie found, user logs in
 
 const Root = props => {
-	return (
-		<Router history={history}>
-			<Switch>
-				<Route path="/home" component={Home} />
-				<Route path="/home/admin" component={HomeAdmin} />
-				<Route path="/login/" component={Login} />
-				<Route path="/register" component={Register} />
-			</Switch>
-			<Redirect exact from="/" to="/login" />
-		</Router>
-	);
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route path="/home/admin" component={HomeAdmin} />
+        <Route path="/login/" component={Login} />
+        <Route path="/register" component={Register} />
+      </Switch>
+      <Redirect exact from="/" to="/home" />
+    </Router>
+  );
 };
 
 export default Root;
