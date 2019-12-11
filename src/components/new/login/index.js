@@ -27,6 +27,14 @@ const Login = props => {
 
 	const [errMessage, setErrMessage] = useState(false);
 
+	const [access_token, setAccessToken] = useState(false);
+
+	useEffect(() => {
+		if (props.location.search.includes("access_token")) {
+			setAccessToken(props.location.search.replace("?access_token=", ""));
+		}
+	}, []);
+
 	//emulating componentDidMount
 	useEffect(() => {
 		register({ name: "email" }, { required: true });
@@ -39,12 +47,14 @@ const Login = props => {
 			url: `${process.env.REACT_APP_SERVER_PATH}/login`,
 			data: {
 				email: values.email,
-				password: values.password
+				password: values.password,
+				gm_access_token: access_token || false
 			}
 		})
-			.then(result => {
+			.then(async result => {
 				if (result.data.authenticated) {
 					history.push("/login");
+
 					toggleLogin(true);
 				} else {
 					console.log(result);

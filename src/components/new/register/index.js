@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Iframe from "react-iframe";
 import {
 	BrowserRouter as Router,
 	Route,
@@ -19,7 +18,7 @@ import {
 } from "semantic-ui-react";
 import "./index.css";
 
-const FormExampleFieldError = () => {
+const Register = () => {
 	useEffect(() => {
 		register(
 			{ name: "email", type: "custom" },
@@ -161,12 +160,11 @@ const FormExampleFieldError = () => {
 					<Segment color="red" inverted content={errors.create.message} />
 				)}
 			</Form>
-			)
 		</div>
 	);
 };
 
-export default FormExampleFieldError;
+export default Register;
 
 // const Register = (props) => {
 
