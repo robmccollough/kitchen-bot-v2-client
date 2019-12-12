@@ -11,7 +11,8 @@ import {
 	Button,
 	Header,
 	Container,
-	Segment
+	Segment,
+	Image
 } from "semantic-ui-react";
 import useForm from "react-hook-form";
 import axios from "axios";
@@ -72,21 +73,26 @@ const Login = props => {
 		<Redirect exact from="login" to="home" />
 	) : (
 		<div className="login-page">
+			<Header className="home-header" size="huge" textAlign="center">
+				KITCHEN
+				{<Image src={require("./chef-hat.png")} />}
+				B0T
+			</Header>
 			<Form onSubmit={handleSubmit(onSubmit)} className="login-form">
 				<Header size="large" content="Login" />
 				<Input
 					name="email"
 					placeholder="Email"
-					label="Email"
-					size="large"
+					//label="Email"
+					size="small"
 					onChange={e => setValue("email", e.target.value)}
 				/>
 				<Input
 					name="password"
 					// type="password"
 					placeholder="Password"
-					size="large"
-					label="Password"
+					size="small"
+					//label="Password"
 					onChange={e => setValue("password", e.target.value)}
 				/>
 				<Button className="login-button" type="submit" content="Login" />
