@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Header, Image, Grid } from "semantic-ui-react";
+import { Header, Image, Grid, Card, Segment,Divider } from "semantic-ui-react";
 import axios from 'axios';
+import "./index.css";
 
 
 const Metric = props => {
@@ -29,29 +30,40 @@ const Metric = props => {
     console.log(metrics)
 
     return (
-			<Grid className="metrics-grid" divided="vertically">
-				<Grid.Column width={3}>
-					<Grid.Row>
-            <h1>Menu Metrics</h1>
-            <h3>People Asked For Menus: {metrics[0] && metrics[0].asks} Times</h3>
-            <h3>Total Number of Menus Created: {metrics[0] && metrics[0].total} </h3>
-          </Grid.Row>
-					<br></br>
-					<br></br>
-					<Grid.Row>
-            <h1>Dinner Metrics</h1>
-            <h3>Dinner Was Asked For: {metrics[2] && metrics[2].asks} Times</h3>
-            <h3>Total Number Of Dinners Had: {metrics[2] && metrics[2].total} </h3>
-          </Grid.Row>
-					<br></br>
-					<br></br>
-          <Grid.Row>
-            <h1>Lateplate Metrics</h1>
-            <h3>Total Lateplates Asked For: {metrics[1] && metrics[1].asks} </h3>
-            <h3>Total Lateplates Completed: {metrics[1] && metrics[1].total} </h3>
-          </Grid.Row>
-				</Grid.Column>
-			</Grid>
+      <div className="metric component">
+			  {/* <div className="metrics-grid">
+					<Segment>
+            <h6>Menu Metrics</h6>
+            <p>People Asked For Menus: {metrics[0] && metrics[0].asks} Times</p>
+            <p>Total Number of Menus Created: {metrics[0] && metrics[0].total} </p>
+            <h6>Dinner Metrics</h6>
+            <p>Dinner Was Asked For: {metrics[2] && metrics[2].asks} Times</p>
+            <p>Total Number Of Dinners Had: {metrics[2] && metrics[2].total} </p>
+            <h6>Lateplate Metrics</h6>
+            <p>Total Lateplates Asked For: {metrics[1] && metrics[1].asks} </p>
+            <p>Total Lateplates Completed: {metrics[1] && metrics[1].total} </p>
+          </Segment>
+        </Card> */}
+          {/* <div className="flex-container"> */}
+            <div className="menus-requested-box">
+              <div><Header size="huge">{metrics[0] && metrics[0].asks}</Header></div>
+              <div><Header size="small" content="Menus Requested"/></div>
+            </div>
+            
+            <div className="menus-created-box">
+              <div><Header size="huge">{metrics[0] && metrics[0].total}</Header></div>
+              <div><Header size="small" content="Menus Created"/></div>
+            </div>
+            <div className="lateplates-box">
+              <div className="lateplates-header-box">
+                <div><Header size="huge">{metrics[1] && metrics[1].total} / {metrics[1] && metrics[1].asks}</Header></div>
+              </div>
+              <div className="lateplates-data-box">
+                <div><Header size="small" content="LatePlates Completed"/></div>
+              </div>
+            </div>
+        </div>
+        // </div>
     );
 };
 

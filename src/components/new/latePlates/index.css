@@ -1,4 +1,4 @@
-.metric {
+.lateplate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,17 +6,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  max-height: 100%;
 }
 
-.metric .menus-requested-box {
+.lateplate .lateplate-header {
   width: 90%;
-  height: 30%;
+  height: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,9 +34,50 @@
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 
-.metric .menus-created-box {
+.lateplate .lateplate-header .lateplate-header-text {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.lateplate .lateplate-list {
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 90%;
-  height: 30%;
+  height: 85%;
+  max-height: 90%;
+}
+
+.lateplate .lateplate-list .single-lateplate {
+  width: 95%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.lateplate .lateplate-list .single-lateplate .lp-order {
+  height: 100%;
+  width: calc(100%- 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,47 +91,15 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 
-.metric .lateplates-box {
-  width: 90%;
-  height: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.lateplate .lateplate-list .single-lateplate .lp-complete-button {
+  background-color: grey;
+  height: 100%;
+  width: 40px;
 }
 
-.metric .lateplates-header-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.metric .lateplates-data-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.lateplate .lateplate-list .single-lateplate .complete-green {
+  background-color: green;
 }
 /*# sourceMappingURL=index.css.map */

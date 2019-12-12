@@ -19,8 +19,6 @@ import history from "../history";
 import "./index.css";
 
 const Login = props => {
-	console.log(props);
-
 	const { handleSubmit, register, setValue, setError } = useForm();
 
 	const [isLoggedIn, toggleLogin] = useState(false);
@@ -54,6 +52,9 @@ const Login = props => {
 			.then(async result => {
 				if (result.data.authenticated) {
 					history.push("/login");
+
+					//store token for later use
+					localStorage.setItem("token", result.data.token);
 
 					toggleLogin(true);
 				} else {

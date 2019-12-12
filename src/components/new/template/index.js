@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "semantiuc-ui-react";
+import { Container } from "semantic-ui-react";
 import axios from "axios";
 
 /*
