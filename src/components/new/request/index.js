@@ -14,6 +14,18 @@ const RequestBox = props => {
 	const [feedback, setFeedback] = useState(null);
 
 	const onSubmit = async () => {
+		if (request == "") {
+			setFeedback(
+				<Segment
+					className="request-feedback"
+					inverted
+					color="red"
+					content="Request cannot be blank"
+				/>
+			);
+			return;
+		}
+
 		await axios({
 			method: "post",
 			url: `${process.env.REACT_APP_SERVER_PATH}/request`,
