@@ -71,6 +71,8 @@ const MenuDisplay = props => {
 					content={
 						isLoading ? (
 							<Loader size="small" active />
+						) : !menu ? (
+							"Menu Unavailable"
 						) : (
 							new Date(menu.date).toDateString()
 						)
@@ -84,16 +86,30 @@ const MenuDisplay = props => {
 				textAlign="center"
 				stackable
 				itemsPerRow={5}
-				content={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
-					(day, index) => (
-						<MenuCard
-							key={index}
-							isLoading={isLoading}
-							food={menu.food}
-							day={day}
-						/>
+				content={
+					menu ? (
+						[
+							"Monday",
+							"Tuesday",
+							"Wednesday",
+							"Thursday",
+							"Friday"
+						].map((day, index) => (
+							<MenuCard
+								key={index}
+								isLoading={isLoading}
+								food={menu.food}
+								day={day}
+							/>
+						))
+					) : (
+						<div>
+							<Header size="huge" content="Whoops!" />
+							<Header size="medium" content="Current Menu Unavailable" />
+						</div>
 					)
-				)}></Card.Group>
+				}
+			/>
 		</div>
 	);
 };
