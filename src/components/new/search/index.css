@@ -1,6 +1,4 @@
-.request {
-  width: 90%;
-  height: 100%;
+.search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,17 +14,18 @@
           justify-content: space-evenly;
 }
 
-.request .request-input {
+.search .search-input {
   width: 90%;
-  height: 60%;
+  height: 20%;
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px lightgrey;
           box-shadow: 2px 2px lightgrey;
   border: 0px;
 }
 
-.request .request-footer {
-  width: 100%;
+.search .search-results {
+  width: 90%;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

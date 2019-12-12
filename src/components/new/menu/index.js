@@ -17,7 +17,7 @@ const SomeOtherComponent = (props) => {
 
 */
 
-const MenuCard = props => {
+export const MenuCard = props => {
 	const { food, day, isLoading } = props;
 	return (
 		<Card className="menu-card" raised>
@@ -49,7 +49,6 @@ const MenuDisplay = props => {
 				authorization: "Bearer " + props.authtoken
 			}
 		}).then(res => {
-			console.log(res);
 			if (res.data.success) {
 				setMenu(res.data.data);
 				setIsLoading(false);

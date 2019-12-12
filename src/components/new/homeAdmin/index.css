@@ -1,5 +1,4 @@
-.home-page {
-  height: 200%;
+.home-page-admin {
   width: 100%;
   background-color: #fff;
   display: -webkit-box;
@@ -17,8 +16,8 @@
           justify-content: flex-start;
 }
 
-.home-header {
-  height: 100px;
+.home-header-admin {
+  height: 13vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,27 +35,27 @@
   font-size: 3em !important;
 }
 
-.home-header img {
+.home-header-admin img {
   margin: 0 !important;
   font-size: 25px !important;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
 }
 
-.home-grid {
+.home-grid-admin {
   width: 90%;
-  height: 45%;
+  height: 150vh;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "menu menu metric" "request lateplate lateplate" ". . . ";
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 47.5% 47.5% 5%;
-      grid-template-rows: 47.5% 47.5% 5%;
+      grid-template-areas: "menu menu metric" "request lateplate lateplate" "post bot search" "post bans bans" ". . .";
+  -ms-grid-columns: 1.5fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 20px;
+      grid-template-rows: 1fr 1fr 1fr 1fr 20px;
   gap: 10px;
 }
 
-.home-grid .component {
+.home-grid-admin .component {
   width: 100%;
   height: 100%;
   background-color: #f2f2f2;
@@ -66,29 +65,56 @@
           box-shadow: 2px 2px lightgrey;
 }
 
-.home-grid .menu {
+.home-grid-admin .search {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: search;
+}
+
+.home-grid-admin .menu {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: menu;
 }
 
-.home-grid .metric {
+.home-grid-admin .metric {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: metric;
 }
 
-.home-grid .request {
+.home-grid-admin .request {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: request;
 }
 
-.home-grid .lateplate {
+.home-grid-admin .lateplate {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: lateplate;
+}
+
+.home-grid-admin .postmenu {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: post;
+  overflow: hidden;
+}
+
+.home-grid-admin .bans {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: bans;
+}
+
+.home-grid-admin .botposter {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: bot;
 }
 /*# sourceMappingURL=index.css.map */

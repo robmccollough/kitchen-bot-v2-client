@@ -86,7 +86,6 @@ const LatePlates = props => {
 				authorization: "Bearer " + props.authtoken
 			}
 		}).then(result => {
-			console.log(result);
 			if (result.data) {
 				//sort by time
 				setLatePlates(result.data.sort((a, b) => a.created_at - b.create_at));

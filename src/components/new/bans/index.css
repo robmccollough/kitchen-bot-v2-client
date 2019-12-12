@@ -1,6 +1,4 @@
-.botposter {
-  width: 90%;
-  height: 100%;
+.bans {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,19 +12,14 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.botposter .request-input {
-  width: 90%;
-  height: 60%;
-  border-radius: 15px;
-  -webkit-box-shadow: 2px 2px lightgrey;
-          box-shadow: 2px 2px lightgrey;
-  border: 0px;
-}
-
-.botposter .request-footer {
+  max-height: 100%;
   width: 100%;
+  height: 100%;
+}
+
+.bans .bans-header {
+  width: 90%;
+  height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,8 +30,25 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.bans .bans-header .bans-header-text {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.bans .bans-header label {
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+}
+
+.bans .bans-table {
+  overflow-y: scroll;
+  width: 90%;
+  max-height: 80%;
 }
 /*# sourceMappingURL=index.css.map */

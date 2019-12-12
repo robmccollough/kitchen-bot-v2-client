@@ -1,19 +1,18 @@
-.botposter {
-	width: 90%;
-	height: 100%;
+.search {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start;
-	.request-input {
+	justify-content: space-evenly;
+	.search-input {
 		width: 90%;
-		height: 60%;
+		height: 20%;
 		border-radius: 15px;
 		box-shadow: 2px 2px lightgrey;
 		border: 0px;
 	}
-	.request-footer {
-		width: 100%;
+	.search-results {
+		width: 90%;
+		height: 80%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

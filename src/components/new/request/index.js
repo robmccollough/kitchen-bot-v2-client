@@ -21,6 +21,7 @@ const RequestBox = props => {
 					inverted
 					color="red"
 					content="Request cannot be blank"
+					onClick={() => setFeedback(false)}
 				/>
 			);
 			return;
@@ -44,6 +45,7 @@ const RequestBox = props => {
 						inverted
 						color="green"
 						content="Your request has been submitted"
+						onClick={() => setFeedback(false)}
 					/>
 				);
 			} else {
@@ -53,6 +55,7 @@ const RequestBox = props => {
 						inverted
 						color="red"
 						content="There was a problem submitting the request"
+						onClick={() => setFeedback(false)}
 					/>
 				);
 			}

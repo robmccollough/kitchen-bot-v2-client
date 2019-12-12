@@ -11,8 +11,10 @@ import Request from "../request";
 import MenuDisplay from "../menu";
 import Metrics from "../metric";
 import BotPoster from "../botPoster";
-import "./index.css";
+import PostMenu from "../postMenu";
 import Bans from "../bans";
+import SearchMenu from "../search";
+import "./index.css";
 
 const HomeAdmin = props => {
 	//put the cookie check/redirect here
@@ -20,22 +22,20 @@ const HomeAdmin = props => {
 	let token = localStorage.getItem("token");
 
 	return (
-		<div className="home-page admin">
-			<Header className="home-header" size="huge" textAlign="center">
+		<div className="home-page-admin">
+			<Header className="home-header-admin" size="huge" textAlign="center">
 				KITCHEN
 				{<Image src={require("./chef-hat.png")} />}
 				B0T
 			</Header>
 
-			<div className="home-grid">
+			<div className="home-grid-admin">
 				<MenuDisplay authtoken={token} />
 				<Metrics authtoken={token} />
 				<Request authtoken={token} />
 				<LatePlates authtoken={token} />
-			</div>
-
-			<div className="admin-grid">
-				<PostMenu authtoken={authoken} />
+				<PostMenu authtoken={token} />
+				<SearchMenu authtoken={token} />
 				<BotPoster authtoken={token} />
 				<Bans authtoken={token} />
 				{/* <AllMenu/> */}

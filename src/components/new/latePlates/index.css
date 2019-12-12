@@ -17,7 +17,7 @@
 
 .lateplate .lateplate-header {
   width: 90%;
-  height: 15%;
+  height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,6 +37,11 @@
 .lateplate .lateplate-header .lateplate-header-text {
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
+}
+
+.lateplate .lateplate-header label {
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
 }
 
 .lateplate .lateplate-list {

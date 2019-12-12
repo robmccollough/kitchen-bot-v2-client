@@ -9,18 +9,19 @@ import {
 import axios from "axios";
 import "./index.css";
 
-const RequestBox = props => {
-	const [request, setRequest] = useState("");
+const BotPoster = props => {
+	const [message, setMessage] = useState("");
 	const [feedback, setFeedback] = useState(null);
 
 	const onSubmit = async () => {
-		if (request == "") {
+		if (message == "") {
 			setFeedback(
 				<Segment
 					className="request-feedback"
 					inverted
 					color="red"
 					content="Request cannot be blank"
+					onClick={() => setFeedback(false)}
 				/>
 			);
 			return;
@@ -28,51 +29,51 @@ const RequestBox = props => {
 
 		await axios({
 			method: "post",
-			url: `${process.env.REACT_APP_SERVER_PATH}/request`,
-			headers: {
-				authorization: "Bearer " + props.authtoken
-			},
+			url: `https://api.groupme.com/v3/bots/post`,
 			data: {
-				request: request
+				bot_id: process.env.REACT_APP_BOT_ID,
+				text: message
 			}
-		}).then(result => {
-			if (result.status == 200) {
-				setRequest("");
+		})
+			.then(result => {
+				setMessage("");
 				setFeedback(
 					<Segment
 						className="request-feedback"
 						inverted
 						color="green"
-						content="Your request has been submitted"
+						content="Your post has been sent"
+						onClick={() => setFeedback(false)}
 					/>
 				);
-			} else {
+			})
+			.catch(err =>
 				setFeedback(
 					<Segment
 						className="request-feedback"
 						inverted
 						color="red"
-						content="There was a problem submitting the request"
+						content="There was a problem sending your post"
+						onClick={() => setFeedback(false)}
 					/>
-				);
-			}
-		});
+				)
+			);
 	};
 
 	return (
-		<div className="request component">
+		<div className="botposter component">
 			<Header
 				className="request-header-text"
 				size="large"
 				dividing
-				content="Requests"
+				content={`\n\tPost a message as KitchenBot`}
 				textAlign="center"
 			/>
 			<TextArea
 				className="request-input"
-				value={request}
-				placeholder={`\n  Comments, Questions, Requests`}
-				onChange={(e, { value }) => setRequest(value)}
+				value={message}
+				placeholder={`Your message here`}
+				onChange={(e, { value }) => setMessage(value)}
 			/>
 			<div className="request-footer">
 				{feedback !== null && feedback}
@@ -87,4 +88,4 @@ const RequestBox = props => {
 	);
 };
 
-export default RequestBox;
+export default BotPoster;

@@ -7,7 +7,7 @@
 
 	.lateplate-header {
 		width: 90%;
-		height: 15%;
+		height: 20%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -15,6 +15,9 @@
 		border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 		.lateplate-header-text {
 			transform: translateY(10px);
+		}
+		label {
+			transform: translateY(25%);
 		}
 	}
 	.lateplate-list {
