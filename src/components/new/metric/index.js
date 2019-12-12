@@ -27,20 +27,6 @@ const Metric = props => {
 
 	return (
 		<div className="metric component">
-			{/* <div className="metrics-grid">
-					<Segment>
-            <h6>Menu Metrics</h6>
-            <p>People Asked For Menus: {metrics[0] && metrics[0].asks} Times</p>
-            <p>Total Number of Menus Created: {metrics[0] && metrics[0].total} </p>
-            <h6>Dinner Metrics</h6>
-            <p>Dinner Was Asked For: {metrics[2] && metrics[2].asks} Times</p>
-            <p>Total Number Of Dinners Had: {metrics[2] && metrics[2].total} </p>
-            <h6>Lateplate Metrics</h6>
-            <p>Total Lateplates Asked For: {metrics[1] && metrics[1].asks} </p>
-            <p>Total Lateplates Completed: {metrics[1] && metrics[1].total} </p>
-          </Segment>
-        </Card> */}
-			{/* <div className="flex-container"> */}
 			<div className="menus-requested-box">
 				<div>
 					<Header size="huge">{metrics[0] && metrics[0].asks}</Header>
@@ -73,7 +59,6 @@ const Metric = props => {
 				</div>
 			</div>
 		</div>
-		// </div>
 	);
 };
 

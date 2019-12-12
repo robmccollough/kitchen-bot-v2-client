@@ -26,7 +26,7 @@ const Root = props => {
 				<Route path="/admin" component={HomeAdmin} />
 				<Route path="/register" component={Register} />
 			</Switch>
-			<Redirect exact from="/" to="/admin" />
+			<Redirect exact from="/" to="/login" />
 		</Router>
 	);
 };
