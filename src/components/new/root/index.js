@@ -7,7 +7,6 @@ import {
 	Redirect,
 	Switch
 } from "react-router-dom";
-import { Provider, connect, withRouter } from "react-redux";
 import Login from "../login";
 import Register from "../register";
 import HomeAdmin from "../homeAdmin";
@@ -23,12 +22,11 @@ const Root = props => {
 		<Router history={history}>
 			<Switch>
 				<Route path="/home" component={Home} />
-				<Route path="/home/admin" component={HomeAdmin} />
 				<Route path="/login" component={Login} />
-				{/* <Route path="/login" component={Login} /> */}
+				<Route path="/admin" component={HomeAdmin} />
 				<Route path="/register" component={Register} />
 			</Switch>
-			<Redirect exact from="/" to="/home" />
+			<Redirect exact from="/" to="/login" />
 		</Router>
 	);
 };
