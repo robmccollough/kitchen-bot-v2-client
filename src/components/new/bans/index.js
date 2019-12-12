@@ -22,9 +22,9 @@ const Bans = props => {
 
 	useEffect(() => {
 		fetchBans();
-	}, {});
+	}, []);
 
-	//console.log(bans);
+	console.log(bans);
 	// console.log("^bans list");
 
 	return (
@@ -38,20 +38,18 @@ const Bans = props => {
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
-				{bans.map(ban => (
-					<Table.Row textAlign="center">
+				{bans.map((ban, index) => (
+					<Table.Row key={index} textAlign="center">
 						<Table.Cell singleLine>{ban.user_id}</Table.Cell>
 						<Table.Cell singleLine>{ban.created_at}</Table.Cell>
 						<Table.Cell singleLine>{ban.created_by}</Table.Cell>
-						<Table.Cell singleLine>{ban.active}</Table.Cell>
+						<Table.Cell singleLine>
+							{ban.active ? "Active" : "Inactive"}
+						</Table.Cell>
 					</Table.Row>
 				))}
 			</Table.Body>
 		</Table>
 	);
-	//for(let i =0; i<bans.length;i++){
-	//banList.append(bans[i])
-	//}
-	//<List.Item>Apples</List.Item>
 };
 export default Bans;

@@ -23,6 +23,8 @@ const Login = props => {
 
 	const [isLoggedIn, toggleLogin] = useState(false);
 
+	const [isLoggedInAdmin, toggleLoginAdmin] = useState(false);
+
 	const [errMessage, setErrMessage] = useState(false);
 
 	const [access_token, setAccessToken] = useState(false);
@@ -55,8 +57,12 @@ const Login = props => {
 
 					//store token for later use
 					localStorage.setItem("token", result.data.token);
-
-					toggleLogin(true);
+					console.log(result);
+					if (result.data.data.role === "admin") {
+						toggleLoginAdmin(true);
+					} else {
+						toggleLogin(true);
+					}
 				} else {
 					console.log(result);
 					setErrMessage(result.data.err);
@@ -68,7 +74,9 @@ const Login = props => {
 			});
 	};
 
-	return isLoggedIn ? (
+	return isLoggedInAdmin ? (
+		<Redirect exact from="login" to="/admin" />
+	) : isLoggedIn ? (
 		<Redirect exact from="login" to="home" />
 	) : (
 		<div className="login-page">

@@ -1,1 +1,94 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+.home-page {
+  height: 200%;
+  width: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.home-header {
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 3em !important;
+}
+
+.home-header img {
+  margin: 0 !important;
+  font-size: 25px !important;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.home-grid {
+  width: 90%;
+  height: 45%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "menu menu metric" "request lateplate lateplate" ". . . ";
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 47.5% 47.5% 5%;
+      grid-template-rows: 47.5% 47.5% 5%;
+  gap: 10px;
+}
+
+.home-grid .component {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  opacity: 0.8;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px lightgrey;
+          box-shadow: 2px 2px lightgrey;
+}
+
+.home-grid .menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: menu;
+}
+
+.home-grid .metric {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: metric;
+}
+
+.home-grid .request {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: request;
+}
+
+.home-grid .lateplate {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: lateplate;
+}
+/*# sourceMappingURL=index.css.map */
