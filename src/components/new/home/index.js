@@ -25,7 +25,7 @@ const Home = props => {
 				B0T
 			</Header>
 			<div className="home-grid">
-				{/*<MenuDisplay authtoken={token} />*/}
+				<MenuDisplay authtoken={token} />
 				<Metrics authtoken={token}/>
 				<Request authtoken={token} />
 				<LatePlates authtoken={token} />
