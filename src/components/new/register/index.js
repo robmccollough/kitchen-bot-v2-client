@@ -19,6 +19,16 @@ import {
 import "./index.css";
 
 const Register = () => {
+	const {
+		register,
+		errors,
+		setError,
+		handleSubmit,
+		setValue,
+		getValues,
+		triggerValidation
+	} = useForm();
+
 	useEffect(() => {
 		register(
 			{ name: "email", type: "custom" },
@@ -41,16 +51,6 @@ const Register = () => {
 	const [addLink, setAddLink] = useState(false);
 
 	const [renderAuth, setRenderAuth] = useState(false);
-
-	const {
-		register,
-		errors,
-		setError,
-		handleSubmit,
-		setValue,
-		getValues,
-		triggerValidation
-	} = useForm();
 
 	//wait until registration is complete
 	const onSubmit = async (data, e) => {

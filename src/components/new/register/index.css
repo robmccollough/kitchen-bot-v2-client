@@ -33,6 +33,6 @@
 }
 
 .register-page .register-form .field {
-  width: 60%;
+  width: 100% !important;
 }
 /*# sourceMappingURL=index.css.map */

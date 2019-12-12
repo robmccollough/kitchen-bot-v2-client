@@ -27,6 +27,7 @@ const Bans = (props) => {
     console.log(bans);
     const banList=(
         <div>
+            
             <List>
             </List>
         </div>
