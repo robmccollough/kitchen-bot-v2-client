@@ -11,7 +11,7 @@ import Request from "../request";
 import MenuDisplay from "../menu";
 import "./index.css";
 import Bans from "../bans";
-//<Bans authtoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWRmMDMwN2Y2Mjc2MGYwMDI0MzRiMzY3Iiwicm9sZSI6ImFkbWluIiwicGFzc3dvcmQiOiJwdyIsImlhdCI6MTU3NjAyODQyN30.oWXY27KdW2CUsQCNzKDPXSuCX1GGnUgqs09qGgW2Vas"/>
+
 const Home = props => {
 	//put the cookie check/redirect here
 
@@ -27,7 +27,7 @@ const Home = props => {
 			<Grid className="home-grid" divided="vertically">
 				<Grid.Row columns={3}>
 					<Grid.Column width={2}></Grid.Column>
-					<Grid.Column width={1}></Grid.Column>
+					<Grid.Column width={1}><Bans authtoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWRmMDMwN2Y2Mjc2MGYwMDI0MzRiMzY3Iiwicm9sZSI6ImFkbWluIiwicGFzc3dvcmQiOiJwdyIsImlhdCI6MTU3NjAyODQyN30.oWXY27KdW2CUsQCNzKDPXSuCX1GGnUgqs09qGgW2Vas"/></Grid.Column>
 				</Grid.Row>
 				<Grid.Row columns={3}>
 					<Grid.Column width={1}></Grid.Column>

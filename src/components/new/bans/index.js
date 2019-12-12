@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from "react";
-import { List } from 'semantic-ui-react';
+import { List, Header,Table } from 'semantic-ui-react';
 import axios from "axios";
 
 const Bans = (props) => {
@@ -23,14 +23,46 @@ const Bans = (props) => {
     useEffect(() => {
         fetchBans();
     }, {});
-    
-    console.log(bans);
-    const banList=(
-        <div>
-            
-            <List>
-            </List>
-        </div>
+  
+    //console.log(bans);
+   // console.log("^bans list");
+
+    return (
+        <Table celled>
+            <Table.Header>
+                <Table.Row textAlign="center">
+                    <Table.HeaderCell singleLine>User</Table.HeaderCell>
+                    <Table.HeaderCell singleLine>Date</Table.HeaderCell>
+                    <Table.HeaderCell singleLine>Banned by</Table.HeaderCell>
+                    <Table.HeaderCell singleLine>Active</Table.HeaderCell>
+                </Table.Row>
+            </Table.Header>
+
+            <Table.Body>
+                <Table.Row textAlign='center'>
+                {bans.map((ban) => (
+                    <Table.Cell singleLine>
+                        {ban.user_id}
+                    </Table.Cell>
+                ))}
+                {bans.map((ban) => (
+                    <Table.Cell singleLine>
+                        {ban.created_at}
+                    </Table.Cell>
+                ))}
+                {bans.map((ban) => (
+                    <Table.Cell singleLine>
+                       {ban.created_by}
+                    </Table.Cell>
+                ))}
+                 {bans.map((ban) => (
+                    <Table.Cell singleLine>
+                        {ban.active}
+                    </Table.Cell>
+                ))}
+                </Table.Row>
+            </Table.Body>
+        </Table>
         
       )
     //for(let i =0; i<bans.length;i++){
