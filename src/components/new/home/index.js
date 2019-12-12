@@ -11,6 +11,7 @@ import Request from "../request";
 import MenuDisplay from "../menu";
 import Metrics from "../metric";
 import "./index.css";
+import Bans from "../bans";
 
 const Home = props => {
 	//put the cookie check/redirect here
@@ -24,6 +25,7 @@ const Home = props => {
 				{<Image src={require("./chef-hat.png")} />}
 				B0T
 			</Header>
+
 			<div className="home-grid">
 				<MenuDisplay authtoken={token} />
 				<Metrics authtoken={token}/>
