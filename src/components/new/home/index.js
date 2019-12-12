@@ -1,14 +1,15 @@
-import React from "react";
 import {
 	BrowserRouter as Router,
 	Route,
 	Redirect,
 	Link
 } from "react-router-dom";
+import React from "react";
 import { Header, Image, Grid } from "semantic-ui-react";
 import LatePlates from "../latePlates";
 import Request from "../request";
 import MenuDisplay from "../menu";
+import Metrics from "../metric";
 import "./index.css";
 
 const Home = props => {
@@ -25,11 +26,13 @@ const Home = props => {
 			</Header>
 			<div className="home-grid">
 				<MenuDisplay authtoken={token} />
-				<div className="metrics component" />
+				<Metrics authtoken={token}/>
 				<Request authtoken={token} />
 				<LatePlates authtoken={token} />
 			</div>
 		</div>
+
+	
 	);
 };
 
