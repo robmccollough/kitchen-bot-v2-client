@@ -102,7 +102,7 @@
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: post;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .home-grid-admin .bans {
@@ -116,5 +116,20 @@
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: bot;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-grid-admin {
+    width: 100%;
+    height: 150vh;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "menu" "post" "request" "lateplate" "bot" "search" "bans";
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: (100vh)[7];
+        grid-template-rows: repeat(7, 100vh);
+    gap: 10px;
+  }
 }
 /*# sourceMappingURL=index.css.map */

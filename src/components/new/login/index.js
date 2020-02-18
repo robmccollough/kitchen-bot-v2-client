@@ -97,7 +97,7 @@ const Login = props => {
 				/>
 				<Input
 					name="password"
-					// type="password"
+					type="password"
 					placeholder="Password"
 					size="small"
 					//label="Password"

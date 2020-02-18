@@ -58,7 +58,7 @@
 	}
 	.postmenu {
 		grid-area: post;
-		overflow: hidden;
+		overflow-y: scroll;
 	}
 
 	.bans {
@@ -67,5 +67,17 @@
 
 	.botposter {
 		grid-area: bot;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.home-grid-admin {
+		width: 100%;
+		height: 150vh;
+		display: grid;
+		grid-template-areas: "menu" "post" "request" "lateplate" "bot" "search" "bans";
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(7, 100vh);
+		gap: 10px;
 	}
 }
