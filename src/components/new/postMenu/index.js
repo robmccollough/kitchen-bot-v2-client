@@ -31,6 +31,8 @@ const PostMenu = props => {
 		reset
 	} = useForm();
 
+	const [feedback, setFeedback] = useState(false);
+
 	useEffect(() => {
 		weekdays.forEach(day => {
 			register(
@@ -46,6 +48,7 @@ const PostMenu = props => {
 
 	const onSubmit = async values => {
 		var newMenu = createMenu(values);
+
 		await axios({
 			method: "post",
 			url: `${process.env.REACT_APP_SERVER_PATH}/menu`,
@@ -56,6 +59,15 @@ const PostMenu = props => {
 		})
 			.then(function() {
 				updateMetrics();
+				setFeedback(
+					<Segment
+						className="request-feedback"
+						inverted
+						color="green"
+						content="Your post has been sent"
+						onClick={() => setFeedback(false)}
+					/>
+				);
 				reset();
 			})
 			.catch(err => setError("submit", "Menu Upload Failed"));
@@ -132,6 +144,9 @@ const PostMenu = props => {
 				{errors.submit && (
 					<Segment content={errors.submit} color="red" inverted />
 				)}
+
+				{feedback}
+
 				<Button className="post-button" type="submit" content="Submit" />
 			</Form>
 		</div>
